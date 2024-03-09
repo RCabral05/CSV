@@ -37,7 +37,10 @@ export const Home = () => {
         });
       }
     });
+    // Reset the value of the file input to clear the selected file(s)
+    event.target.value = null;
   };
+  
 
   const removeCSV = name => {
     setUploadedCSVs(prev => prev.filter(csv => csv.name !== name));
