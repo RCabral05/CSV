@@ -130,6 +130,9 @@ export const Home = () => {
       return;
     }
   
+    const filename = prompt("Enter filename (without extension):");
+    if (!filename) return; // If user cancels or leaves it empty, exit
+  
     const headers = Object.keys(filteredData[0]);
     const csvContent = [
       headers.join(','),
@@ -141,13 +144,15 @@ export const Home = () => {
     if (link.download !== undefined) {
       const url = URL.createObjectURL(blob);
       link.setAttribute('href', url);
-      link.setAttribute('download', 'new_list.csv');
+      link.setAttribute('download', `${filename}.csv`);
       link.style.visibility = 'hidden';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
   };
+  
+  
   
 
   return (
@@ -182,9 +187,10 @@ export const Home = () => {
         {uploadedCSVs.filter(csv => csv.name === activeTab).map(csv => renderTable(csv.data))}
       </div>
       {activeTab === "New List" && (
-        <button onClick={() => exportToCSV([...currentData.data, ...uploadedCSVs.flatMap(csv => csv.data)])}>
-            Export New List
-        </button>
+       <button onClick={() => exportToCSV([...currentData.data, ...uploadedCSVs.flatMap(csv => csv.data)], 'new_list.csv')}>
+          Export New List
+       </button>
+     
       )}
     </div>
   );
