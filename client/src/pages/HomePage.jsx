@@ -1,9 +1,11 @@
 import { Home } from "../components/Home/Home";
+import { Index } from "../components/Index/Index";
 
 export const HomePage = () => {
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
+      <Index />
     </div>
     
   );

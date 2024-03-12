@@ -5,19 +5,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import HomePage from "./pages/HomePage";
-
+import { CSVProvider } from "./context/CSVContext";
 // Create root element
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<HomePage />} />
-          <Route path="*" element={<p>Route not found</p>} />
-        </Route>
-      </Routes>
+      <CSVProvider>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<HomePage />} />
+            <Route path="*" element={<p>Route not found</p>} />
+          </Route>
+        </Routes>
+      </CSVProvider>
     </BrowserRouter>
 );
 

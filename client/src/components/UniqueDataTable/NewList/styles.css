@@ -1,0 +1,60 @@
+/* styles.css */
+.newList{
+    width: 90%;
+    border: 1px solid red;
+    overflow: auto;
+}
+.newList-button-export {
+    margin-bottom: 15px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.newList-button-export:hover {
+    background-color: #0056b3;
+}
+
+.newList-table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.newList-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.newList-th, .newList-td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.newList-th {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.newList-tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.newList-column-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+}
+
+.newList-column-button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
